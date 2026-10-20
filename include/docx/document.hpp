@@ -4,12 +4,10 @@
 
 namespace docx {
 
-class Document
-{
-public:
-    explicit Document();
-    bool open(const std::filesystem::path& filepath);
-    
+class Document {
+ public:
+  explicit Document();
+  bool open(const std::filesystem::path& filepath);
 };
 
-}
+}  // namespace docx

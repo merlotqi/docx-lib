@@ -1,3 +1,16 @@
-build
-.cache
+# Build output
+build/
+build-*/
+cmake-build-*/
+out/
 
+# Tooling / caches
+.cache/
+compile_commands.json
+CMakeUserPresets.json
+__pycache__/
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp

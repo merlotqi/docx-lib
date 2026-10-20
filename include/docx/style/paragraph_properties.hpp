@@ -1,7 +1,3 @@
 #pragma once
 
-namespace docx {
-
-
-    
-}
+namespace docx {}

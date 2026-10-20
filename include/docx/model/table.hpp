@@ -2,9 +2,6 @@
 
 namespace docx {
 
-class Table
-{
+class Table {};
 
-};
-
-}
+}  // namespace docx

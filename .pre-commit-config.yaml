@@ -1,0 +1,37 @@
+# See https://pre-commit.com for usage instructions.
+#
+# Install once per clone:   ./scripts/setup.sh   (runs `pre-commit install`)
+# Run manually:             pre-commit run --all-files
+#
+# Note: the clang-format hook is a *local* hook and uses the clang-format
+# binary on your PATH. Formatting output differs between major versions, so
+# use clang-format 18.x (Ubuntu 24.04 default) to match CI.
+
+repos:
+  - repo: local
+    hooks:
+      - id: clang-format
+        name: clang-format
+        description: Format C++ sources with the repository .clang-format
+        entry: clang-format --style=file -i
+        language: system
+        types_or: [c++, c]
+        files: ^(include|src|tests|examples)/.*\.(hpp|hh|h|cpp|cc|cxx)$
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: fix-byte-order-marker
+      - id: check-yaml
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: detect-private-key

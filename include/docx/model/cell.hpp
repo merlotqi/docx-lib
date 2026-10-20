@@ -2,9 +2,6 @@
 
 namespace docx {
 
-class Cell
-{
+class Cell {};
 
-};
-
-}
+}  // namespace docx

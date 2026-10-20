@@ -8,7 +8,7 @@ namespace docx {
 class NodeVisitor;
 
 class Node {
-public:
+ public:
   virtual ~Node() = default;
   virtual void accept(NodeVisitor &visitor) = 0;
 
@@ -16,13 +16,13 @@ public:
 };
 
 class ContainerNode : public Node {
-public:
+ public:
   void append_child(std::unique_ptr<Node> child);
   const std::vector<std::unique_ptr<Node>> &children() const;
 
-private:
+ private:
   Node *parent_ = nullptr;
   std::vector<std::unique_ptr<Node>> children_;
 };
 
-} // namespace docx
+}  // namespace docx
